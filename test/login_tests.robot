@@ -1,11 +1,7 @@
 *** Settings ***
 Documentation     ทดสอบการล็อกอิน
 Library           SeleniumLibrary
-Resource          ../keywords/common.resource
-Resource          ../resources/global.resource
-Resource          ../keywords/login_test.resource
-Resource          ../resources/login.resource
-
+Resource          ../resources/import.resource
 *** Test Cases ***
 Login with correct user & password
     [Documentation]    ทดสอบล็อกอินสำเร็จเมื่อกรอกข้อมูลถูกต้อง
