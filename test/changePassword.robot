@@ -2,8 +2,6 @@
 Documentation     ทดสอบการเปลี่ยนรหัสผ่านผู้ใช้
 Library           SeleniumLibrary
 Resource          ../resources/import.resource
-
-
 *** Test Cases ***
 User Can Change Password
     [Documentation]     ทดสอบการตรวจสอบเปลี่ยนรหัสผ่านผู้ใช้
@@ -21,3 +19,7 @@ User Can Change Password
     Change Password     ${VAILD_PASSWORD}    ${NEW_PASSWORD}    ${NEW_PASSWORD}
     Change Password Back to Defult
     [Teardown]     Close Window
+
+
+
+    

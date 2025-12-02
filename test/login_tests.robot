@@ -26,7 +26,6 @@ Login with incorrect Username or Password
     Click Button    ${LOGIN}
     Wait Until Element Is Visible    ${LOGIN_ALERT}    5s
     [Teardown]    Close Window
-
 Login with missing Username or Password
     [Documentation]    ทดสอบการล็อกอินหากผู้ใช้ลืมกรอกข้อมูลในช่อง ชื่อผู้ใช้ หรือ รหัสผ่าน
     [Tags]             Login Negative 2
