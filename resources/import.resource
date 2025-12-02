@@ -5,9 +5,9 @@ Library    SeleniumLibrary
 Resource    global.resource
 
 #Element Locators
-Resource    pages/changePassword.resource
-Resource    pages/login.resource
-Resource    pages/UserProfile.resource
+Resource    pages/changePasswordPage.resource
+Resource    pages/loginPage.resource
+Resource    pages/UserProfilePage.resource
 
 #Keywords
 Resource    ../keywords/changePass.resource
