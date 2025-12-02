@@ -14,5 +14,4 @@ Close Window
     Capture Page Screenshot
     Close Browser
 
-    
-    
+
