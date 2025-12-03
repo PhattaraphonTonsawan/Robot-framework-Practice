@@ -5,7 +5,6 @@ Resource    ${CURDIR}../../../../../resources/import.resource
 Change Password
     [Arguments]    ${old_password}    ${new_password}    ${confirm_password}
     login_test.User Login to system By Correct User    valid_user=${username_data}    valid_password=${password_data}
-    SeleniumLibrary.Wait Until Element Is Visible  ${UserProfilePage['dashboard_header']}  ${timeout}
     common_web.Click Button        button=${UserProfilePage['user_profile_menu']}
     SeleniumLibrary.Wait Until Element Is Enabled    ${UserProfilePage['account_menu']}    ${timeout}
     common_web.Click Button        button=${changePasswordPage['password_menu']}
