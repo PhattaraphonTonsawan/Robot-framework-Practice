@@ -5,17 +5,8 @@ Resource          ../resources/import.resource
 *** Test Cases ***
 User Can Change Password
     [Documentation]     ทดสอบการตรวจสอบเปลี่ยนรหัสผ่านผู้ใช้
-    Open Webpage        ${URL}    ${BROWSER} 
-    Click Button        ${GOTO_LOGINPAGE_BUTTON} 
-    Switch Window   NEW  
-    Wait Until Element Is Visible    ${LOGIN_PAGE_HEADER}  3s
-    User Login to system    ${VALID_USER}    ${VAILD_PASSWORD}
-    Wait Until Element Is Visible  ${DASHBOARD_HEADER}  3s
-    Click Button        ${USER_PROFILE_MENU}
-    Wait Until Element Is Enabled    ${ACCOUNT_MENU}    3s
-    Click Button        ${PASSWORD_MENU}
-    Change Password     ${VAILD_PASSWORD}    ${NEW_PASSWORD}    ${NEW_PASSWORD}   
-    Change Password Back to Defult 
+    Change Password     old_password=${VAILD_PASSWORD}    new_password=${VAILD_PASSWORD2}    confirm_password=${VAILD_PASSWORD2}   
+    Change Password Back to Defult     old_password=${VAILD_PASSWORD2}    new_password=${VAILD_PASSWORD}    confirm_password=${VAILD_PASSWORD} 
     [Teardown]     Close Window
 
 

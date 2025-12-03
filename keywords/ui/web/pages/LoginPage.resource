@@ -1,15 +1,14 @@
 *** Settings ***
-Library    SeleniumLibrary
-
+Resource    ../../../../resources/import.resource
 *** Keywords ***
 Enter Username
     [Arguments]    ${username}
-    Wait Until Element Is Visible    ${USERNAME_FIELD}
-    Input Text     ${USERNAME_FIELD}    ${username}
+    SeleniumLibrary.Wait Until Element Is Visible    ${LoginPage.USERNAME_FIELD}
+    SeleniumLibrary.Input Text     ${LoginPage.USERNAME_FIELD}    ${username}
 Enter Password
     [Arguments]    ${password}
-    Wait Until Element Is Visible    ${PASSWORD_FIELD}
-    Input Password    ${PASSWORD_FIELD}    ${password}
+    SeleniumLibrary.Wait Until Element Is Visible    ${LoginPage.PASSWORD_FIELD}
+    SeleniumLibrary.Input Password    ${LoginPage.PASSWORD_FIELD}    ${password}
 
 
 

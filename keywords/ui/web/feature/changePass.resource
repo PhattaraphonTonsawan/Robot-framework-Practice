@@ -1,21 +1,35 @@
 *** Settings ***
-Library    SeleniumLibrary
 Resource    ../../../../resources/import.resource
-Resource    ../pages/ChangePasswordPage.resource
 
 *** Keywords ***
 Change Password
-    [Arguments]    ${OldPassword}    ${NewPassword}    ${ConfirmPassword}
-    Enter OldPassword    ${OldPassword}
-    Enter NewPassword    ${NewPassword}
-    Enter ConfirmPassword    ${ConfirmPassword}
-    Wait Until Element Is Enabled    ${UPDATE_BUTTON}    10s
-    Click Button  ${UPDATE_BUTTON}
-    Wait Until Element Is Visible    ${CONFIRM_BUTTON}    10s
-    Click Button    ${CONFIRM_BUTTON}
+    [Arguments]    ${old_password}    ${new_password}    ${confirm_password}
+    login_test.User Login to system By Correct User    ${VALID_USER}    ${VAILD_PASSWORD}
+    SeleniumLibrary.Wait Until Element Is Visible  ${UserProfilePage.DASHBOARD_HEADER}  ${TIMEOUT}
+    common_web.Click Button        ${UserProfilePage.USER_PROFILE_MENU}
+    SeleniumLibrary.Wait Until Element Is Enabled    ${UserProfilePage.ACCOUNT_MENU}    ${TIMEOUT}
+    common_web.Click Button        ${changePasswordPage.PASSWORD_MENU}
+    ChangePasswordPage.Enter OldPassword    old_password=${old_password}
+    ChangePasswordPage.Enter NewPassword    new_password=${new_password}
+    ChangePasswordPage.Enter ConfirmPassword    confirm_password=${confirm_password}
+    SeleniumLibrary.Wait Until Element Is Enabled    ${changePasswordPage.UPDATE_BUTTON}    10s
+    common_web.Click Button  ${changePasswordPage.UPDATE_BUTTON}
+    SeleniumLibrary.Wait Until Element Is Visible    ${changePasswordPage.CONFIRM_BUTTON}    10s
+    common_web.Click Button    ${changePasswordPage.CONFIRM_BUTTON}
 
 Change Password Back to Defult 
-    Change Password        ${NEW_PASSWORD}    ${VAILD_PASSWORD}    ${VAILD_PASSWORD} 
-
+    [Arguments]    ${old_password}    ${new_password}    ${confirm_password}
+    login_test.User Login to system By Correct User    valid_user=${VALID_USER}    valid_password=${VAILD_PASSWORD2}
+    SeleniumLibrary.Wait Until Element Is Visible  ${UserProfilePage.DASHBOARD_HEADER}  ${TIMEOUT}
+    common_web.Click Button        ${UserProfilePage.USER_PROFILE_MENU}
+    SeleniumLibrary.Wait Until Element Is Enabled    ${UserProfilePage.ACCOUNT_MENU}    ${TIMEOUT}
+    common_web.Click Button        ${changePasswordPage.PASSWORD_MENU}
+    ChangePasswordPage.Enter OldPassword    old_password=${old_password}
+    ChangePasswordPage.Enter NewPassword    new_password=${new_password}
+    ChangePasswordPage.Enter ConfirmPassword    confirm_password=${confirm_password}
+    SeleniumLibrary.Wait Until Element Is Enabled    ${changePasswordPage.UPDATE_BUTTON}    10s
+    common_web.Click Button  ${changePasswordPage.UPDATE_BUTTON}
+    SeleniumLibrary.Wait Until Element Is Visible    ${changePasswordPage.CONFIRM_BUTTON}    10s
+    common_web.Click Button    ${changePasswordPage.CONFIRM_BUTTON}
 
     

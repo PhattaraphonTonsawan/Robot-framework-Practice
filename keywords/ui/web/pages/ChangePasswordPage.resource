@@ -1,19 +1,19 @@
 *** Settings ***
-Library    SeleniumLibrary
+Resource    import.resource
 
 *** Keywords ***
 Enter OldPassword
-    [Arguments]    ${oldPassword}
-    Wait Until Element Is Visible    ${OLD_PASSWORD_FIELD} 
-    Input Text     ${OLD_PASSWORD_FIELD}     ${oldPassword}
+    [Arguments]    ${old_password}
+    SeleniumLibrary.Wait Until Element Is Visible    ${changePasswordPage.OLD_PASSWORD_FIELD} 
+    SeleniumLibrary.Input Text     ${changePasswordPage.OLD_PASSWORD_FIELD}     ${old_password}
 Enter NewPassword
-    [Arguments]    ${npassword}
-    Wait Until Element Is Visible    ${NEW_PASSWORD_FIELD}
-    Input Password    ${NEW_PASSWORD_FIELD}   ${npassword}
+    [Arguments]    ${new_password}
+    SeleniumLibrary.Wait Until Element Is Visible    ${changePasswordPage.NEW_PASSWORD_FIELD}
+    SeleniumLibrary.Input Password    ${changePasswordPage.NEW_PASSWORD_FIELD}   ${new_password}
 Enter ConfirmPassword
-    [Arguments]    ${cpassword}
-    Wait Until Element Is Visible    ${CONFIRM_PASSWORD_FIELD} 
-    Input Password    ${CONFIRM_PASSWORD_FIELD}    ${cpassword}
+    [Arguments]    ${confirm_password}
+    SeleniumLibrary.Wait Until Element Is Visible    ${changePasswordPage.CONFIRM_PASSWORD_FIELD} 
+    SeleniumLibrary.Input Password    ${changePasswordPage.CONFIRM_PASSWORD_FIELD}    ${confirm_password}
 
 
     

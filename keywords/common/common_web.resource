@@ -3,15 +3,17 @@ Library    SeleniumLibrary
 
 *** Keywords ***
 Open Webpage
-    [Arguments]    ${URL}    ${BROWSER}
-    Open Browser    ${URL}    ${BROWSER}
-    Maximize Browser Window
+    [Arguments]    ${url}    ${browser}
+    SeleniumLibrary.Open Browser    ${url}    ${browser}
+    SeleniumLibrary.Maximize Browser Window
+
 Click Button
-    [Arguments]    ${BUTTON}
-    Wait Until Element Is Enabled    ${BUTTON}
-    Click Element    ${BUTTON}
+    [Arguments]    ${button}
+    SeleniumLibrary.Wait Until Element Is Enabled    ${button}
+    SeleniumLibrary.Click Element    ${button}
+
 Close Window
-    Capture Page Screenshot
-    Close Browser
+    SeleniumLibrary.Capture Page Screenshot
+    SeleniumLibrary.Close Browser
 
 
