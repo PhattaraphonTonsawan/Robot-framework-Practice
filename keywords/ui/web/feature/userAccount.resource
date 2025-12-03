@@ -1,5 +1,5 @@
 *** Settings ***
-Resource    import.resource
+Resource    ${CURDIR}../../../../../resources/import.resource
 
 *** Keywords ***
 Show User Profile
