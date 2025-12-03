@@ -1,6 +1,6 @@
 *** Settings ***
 Documentation     ทดสอบการตรวจสอบโปรไฟล์ผู้ใช้
-Resource          import.resource 
+Resource          ${CURDIR}/../resources/import.resource
 
 *** Test Cases ***
 Show User Profile

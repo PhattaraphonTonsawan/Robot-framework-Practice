@@ -12,7 +12,7 @@ Enter NewPassword
     SeleniumLibrary.Input Password    ${changePasswordPage['NEW_PASSWORD_FIELD']}   ${new_password}
 Enter ConfirmPassword
     [Arguments]    ${confirm_password}
-    SeleniumLibrary.Wait Until Element Is Visible    ${changePasswordPage.['CONFIRM_PASSWORD_FIELD']} 
+    SeleniumLibrary.Wait Until Element Is Visible    ${changePasswordPage['CONFIRM_PASSWORD_FIELD']} 
     SeleniumLibrary.Input Password    ${changePasswordPage['CONFIRM_PASSWORD_FIELD']}    ${confirm_password}
 
 

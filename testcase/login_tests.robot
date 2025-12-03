@@ -1,6 +1,6 @@
 *** Settings ***
 Documentation     ทดสอบการล็อกอิน
-Resource          import.resource
+Resource          ${CURDIR}/../resources/import.resource
 *** Test Cases ***
 Login with correct user & password
     [Documentation]    ทดสอบล็อกอินสำเร็จเมื่อกรอกข้อมูลถูกต้อง

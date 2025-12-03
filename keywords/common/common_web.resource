@@ -1,5 +1,5 @@
 *** Settings ***
-Library    SeleniumLibrary
+Resource    import.resource
 
 *** Keywords ***
 Open Webpage

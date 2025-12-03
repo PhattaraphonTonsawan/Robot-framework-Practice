@@ -1,6 +1,6 @@
 *** Settings ***
 Documentation     ทดสอบการเปลี่ยนรหัสผ่านผู้ใช้
-Resource          import.resource
+Resource          ${CURDIR}/../resources/import.resource
 *** Test Cases ***
 User Can Change Password
     [Documentation]     ทดสอบการตรวจสอบเปลี่ยนรหัสผ่านผู้ใช้
