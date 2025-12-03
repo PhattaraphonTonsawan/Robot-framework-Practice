@@ -1,7 +1,6 @@
 *** Settings ***
 Documentation     ทดสอบการล็อกอิน
-Library           SeleniumLibrary
-Resource          ../resources/import.resource
+Resource          import.resource
 *** Test Cases ***
 Login with correct user & password
     [Documentation]    ทดสอบล็อกอินสำเร็จเมื่อกรอกข้อมูลถูกต้อง
@@ -13,7 +12,7 @@ Login with incorrect Username or Password
     [Documentation]    ทดสอบการล็อกอินหากผู้ใช้กรอกชื่อผู้ใช้หรือรหัสผ่านผิด
     [Tags]             Login Negative 
     login_test.User Login To System By Incorrect User    invalid_user=${INVAILD_USERNAME}    invalid_password=${INVAILD_PASSWORD}
-    [Teardown]    Close Window
+    [Teardown]    common_web.Close Window
     
 
 

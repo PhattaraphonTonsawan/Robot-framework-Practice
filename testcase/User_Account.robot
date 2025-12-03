@@ -1,9 +1,9 @@
 *** Settings ***
 Documentation     ทดสอบการตรวจสอบโปรไฟล์ผู้ใช้
-Resource          ../resources/import.resource 
+Resource          import.resource 
 
 *** Test Cases ***
 Show User Profile
     userAccount.Show User Profile
-    [Teardown]    Close Window
+    [Teardown]    common_web.Close Window
 

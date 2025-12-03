@@ -1,5 +1,5 @@
 *** Settings ***
-Resource   ../../../../resources/import.resource
+Resource    import.resource
 
 *** Keywords ***
 User Login To System By Correct User

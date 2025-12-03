@@ -7,5 +7,5 @@ Show User Profile
     common_web.Click Button    button=${UserProfilePage.USER_PROFILE_MENU}
     SeleniumLibrary.Wait Until Element Is Enabled    ${UserProfilePage.ACCOUNT_MENU}    ${TIMEOUT}
     common_web.Click Button    button=${UserProfilePage.ACCOUNT_MENU}
-    SeleniumLibrary.Wait Until Element Is Visible    id=account    ${TIMEOUT}
+    SeleniumLibrary.Wait Until Element Is Visible    ${UserProfilePage.ACCOUNT_TITLE}    ${TIMEOUT}
     
